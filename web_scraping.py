@@ -1,8 +1,14 @@
-import requests
-from bs4 import BeautifulSoup
+# Ensure required libraries are installed
+try:
+    import requests
+    from bs4 import BeautifulSoup
+except ImportError as e:
+    print("Missing library:", e.name)
+    print("Please install it using: pip install", e.name)
+    exit(1)
 
-# URL to scrape
-url = 'https://example.com'
+# Updated URL to scrape
+url = 'https://www.wikipedia.org/'
 
 # Send a GET request
 response = requests.get(url)
